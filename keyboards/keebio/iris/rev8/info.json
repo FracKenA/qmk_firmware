@@ -1,12 +1,14 @@
 {
     "keyboard_name": "Iris Rev. 8",
-    "bootloader": "rp2040",
-    "diode_direction": "COL2ROW",
-    "features": {
-        "extrakey": true,
-        "mousekey": true,
-        "rgb_matrix": true
+    "usb": {
+        "device_version": "8.0.0",
+        "pid": "0x8256"
     },
+    "matrix_pins": {
+        "cols": ["GP2", "GP3", "GP29", "GP27", "GP6", "GP5"],
+        "rows": ["GP0", "GP1", "GP7", "GP16", "GP28"]
+    },
+    "diode_direction": "COL2ROW",
     "encoder": {
         "enabled": true,
         "rotary": [
@@ -17,10 +19,6 @@
     "ws2812": {
         "driver": "vendor",
         "pin": "GP9"
-    },
-    "matrix_pins": {
-        "cols": ["GP2", "GP3", "GP29", "GP27", "GP6", "GP5"],
-        "rows": ["GP0", "GP1", "GP7", "GP16", "GP28"]
     },
     "split": {
         "enabled": true,
@@ -35,9 +33,12 @@
         }
     },
     "processor": "RP2040",
-    "usb": {
-        "device_version": "8.0.0",
-        "pid": "0x8256"
+    "bootloader": "rp2040",
+    
+    "features": {
+        "extrakey": true,
+        "mousekey": true,
+        "rgb_matrix": true
     },
     "layouts": {
         "LAYOUT": {
@@ -111,6 +112,7 @@
         }
     },
     "rgb_matrix": {
+        "driver": "WS2812",
         "animations": {
             "alphas_mods": true,
             "gradient_up_down": true,
@@ -156,7 +158,6 @@
             "solid_splash": true,
             "solid_multisplash": true
         },
-        "driver": "WS2812",
         "split_count": [34, 34],
         "max_brightness": 120,
         "layout": [
